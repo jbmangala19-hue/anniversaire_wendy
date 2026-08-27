@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poème 4 - La crème de la crème</title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<div class="brand">
+  <span class="mark"></span>Pour <span style="font-style:italic;color:var(--accent)">Wendy</span><span class="sub">✦ Bolingo</span>
+</div>
+
+<section class="slide active" data-section="Le dernier mot" data-sub="Pour toi">
+    <div class="slide-inner s-colophon">
+      <div class="s-colophon-top">
+        <div class="marker">&sect; Message</div>
+        <div class="meta">Pour Wendy &middot; Aujourd'hui et toujours</div>
+      </div>
+      <div class="s-colophon-center">
+        <div class="s-colophon-headline">
+          <h2 class="h-display">
+            <span class="mw"><span>Laisse moi un message <em>si nécessaire</em>.</span></span>
+          </h2>
+          <p>Je ne pourrais peut-etre pas te répondre, en tout cas pas tant que je ne serais pas joignable. Cependant tes mots me parviendront ne t'en fais pas pour ça.</p>
+        </div>
+        <form method="post">
+          {% csrf_token %}
+            <div class="s-colophon-cta">
+                <div class="s-colophon-contact">
+                    <label class="mw">Titre</label>
+                    <input type="text" class="form-control" name="titre" placeholder="Donne un titre à ton message" required>
+                    <label class="mw">Message</label>
+                    <textarea class="form-control" name="message" placeholder="Ecris ton message ici" rows="4"></textarea>
+                    <p class="mw text-success mt-2 mb-3">{{message}} </p>
+                </div>
+                <div class="s-colophon-cta-btns">
+                    <button type="submit" class="btn-primary">Envoyer </button>
+                    <a class="btn-secondary" href="/home">Retour &uarr;</a>
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="s-colophon-bot">
+        <span><strong>A la prochaine</strong> Bolingo</span>
+        <span>De la part de Motema</span>
+        <span>✦</span>
+      </div>
+    </div>
+  </section>
+
+<script src="{% static 'main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
